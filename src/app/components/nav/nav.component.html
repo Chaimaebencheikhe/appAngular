@@ -1,0 +1,71 @@
+  <mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+
+      
+    <mat-toolbar>
+      <img src="assets/images/icon.png">
+    </mat-toolbar>
+    <mat-nav-list>
+      
+      <section>
+        
+        <div class="navicon">
+          <div>
+            
+          </div>
+        </div>
+        <a routerLink="/drag">Get Started</a>
+        <a routerLink="">Projects</a>
+        <a routerLink="/about">About</a>
+      
+      </section>
+
+      
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <div class="spacer">  </div>
+       
+      <div class="listt"><nav>
+          <ul>
+            <li >
+              <a routerLink="/here">
+             Home
+            </a>
+              <span></span><span></span><span></span><span></span>
+            </li>
+            <li>
+              <a routerLink="/contact">
+              Contact  Us
+              </a>
+              <span></span><span></span><span></span><span></span>
+            </li>
+            <li>
+              <a routerLink="/">
+              Sign Up
+              </a>
+              <span></span><span></span><span></span><span></span>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </mat-toolbar>
+    
+<router-outlet>
+  
+</router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

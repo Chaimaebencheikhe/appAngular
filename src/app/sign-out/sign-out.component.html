@@ -1,0 +1,21 @@
+<mat-form-field class="columns">
+    <mat-label *ngIf="selectedFiles; else newFile">{{selectedFiles.item(0).name}}</mat-label>
+    <ng-template #newFile>
+        <mat-label>Choose file</mat-label>
+        
+    </ng-template>
+    <input matInput disabled>
+    <button mat-icon-button matSuffix (click)="fileInput.click()">
+        <mat-icon  cdkDrag cdkDragBoundary=".bounding-box" style="z-index: 1"
+        >attach_file</mat-icon>
+        <video
+        cdkDrag
+        cdkDragBoundary=".bounding-box"
+        style="z-index: 3"
+        (cdkDragEnded)="onDragEnded($event)"
+      >
+</video>
+    </button>
+    <input hidden (change)="selectFile($event)" #fileInput type="file" id="file">
+</mat-form-field>
+

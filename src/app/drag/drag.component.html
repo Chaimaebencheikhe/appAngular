@@ -1,0 +1,77 @@
+<p>Choose An image/video/Sound !</p>
+<ngx-dropzone (change)="onSelect($event)">
+	<ngx-dropzone-label>
+		<mat-icon>image</mat-icon>
+		<mat-icon>play_circle</mat-icon>
+  <mat-icon>music_note</mat-icon>
+</ngx-dropzone-label>  
+
+		
+	<ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+		<ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+	
+	</ngx-dropzone-preview>
+	
+</ngx-dropzone>
+
+
+
+
+
+<p></p>
+
+
+<div class="custom-dropzone" ngx-dropzone [accept]="'*'" (change)="onSelect($event)">
+	<ngx-dropzone-label>
+		<div>
+			<h2>drop it here !</h2>
+		</div>
+	</ngx-dropzone-label>
+	<ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+		<ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+	</ngx-dropzone-image-preview>
+</div>
+
+<div class="p">
+	<div class="Plt">
+		<textarea
+		cdkDrag
+		cdkDragBoundary=".bounding-box"
+		style="z-index: 3"
+		(cdkDragEnded)="onDragEnded($event)"
+		class="text"
+		placeholder="drop me!"></textarea>
+	  <textarea
+	  cdkDrag
+	  cdkDragBoundary=".bounding-box"
+	  style="z-index: 3"
+	  (cdkDragEnded)="onDragEnded($event)"
+	  class="text"
+	  placeholder="drop me!"></textarea>
+	<textarea
+	cdkDrag
+	cdkDragBoundary=".bounding-box"
+	style="z-index: 3"
+	(cdkDragEnded)="onDragEnded($event)"
+	class="text"
+	placeholder="drop me"></textarea>
+	<textarea
+	cdkDrag
+	cdkDragBoundary=".bounding-box"
+	style="z-index: 3"
+	(cdkDragEnded)="onDragEnded($event)"
+	class="text"  placeholder="drop me!"
+	></textarea>
+	<textarea
+	cdkDrag
+	cdkDragBoundary=".bounding-box"
+	style="z-index: 3"
+	(cdkDragEnded)="onDragEnded($event)"
+	class="text"  placeholder="drop me!"
+	></textarea>
+	  
+	
+	
+	  
+	</div>
+</div>
